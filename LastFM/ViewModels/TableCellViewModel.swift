@@ -7,3 +7,23 @@
 //
 
 import Foundation
+
+struct TablecellViewModel {
+    
+//MARK: - Properties
+    var album: AlbumPresentable
+    
+    var name: String {
+        return album.name
+    }
+    
+    var artist: String {
+        return album.artist
+    }
+}
+
+extension TablecellViewModel: AlbumPresentable {
+    var albumImage: String {
+        return album.albumImage
+    }
+}

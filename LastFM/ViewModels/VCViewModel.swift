@@ -24,6 +24,17 @@ class VCViewModel {
     
     var didFetchData: DidFetchDataCompletion?
     
+    var albumsSearchResult: AlbumSearchData!
+    
+    var numberOfAlbums: Int {
+        return albumsSearchResult.results.albummatches.albums.count
+    }
+    
+    // MARK: - Methods
+    
+    func viewModel(for index: Int) -> TablecellViewModel {
+        return TablecellViewModel(album: albumsSearchResult.results.albummatches.albums[index])
+    }
     // MARK: - Initialization
     
     init() {
@@ -58,6 +69,7 @@ class VCViewModel {
                 do {
                     // Decode JSON Response
                     let searchResponse = try decoder.decode(AlbumSearchResponse.self, from: data)
+                    self?.albumsSearchResult = searchResponse
 
                     // Invoke Completion Handler
                     self?.didFetchData?(searchResponse, nil)

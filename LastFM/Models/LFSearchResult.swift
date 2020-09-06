@@ -32,7 +32,7 @@ struct Results: Codable {
 
 // MARK: - AlbumMatches
 struct AlbumMatches: Codable {
-    let album: [Album]
+    let albums: [Album]
 }
 
 // MARK: - Album
@@ -46,19 +46,12 @@ struct Album: Codable {
 // MARK: - Image
 struct Image: Codable {
     let text: String
-    let size: Size
+    let size: String
 
     enum CodingKeys: String, CodingKey {
         case text = "#text"
         case size
     }
-}
-
-enum Size: String, Codable {
-    case extralarge = "extralarge"
-    case large = "large"
-    case medium = "medium"
-    case small = "small"
 }
 
 // MARK: - Attr

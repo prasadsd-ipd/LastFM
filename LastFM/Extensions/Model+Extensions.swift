@@ -10,3 +10,10 @@ import Foundation
 
 extension AlbumSearchResponse: AlbumSearchData {}
 
+extension Image: AlbumImages {}
+
+extension Album: AlbumPresentable {
+    var albumImage: String {
+        return self.image[1].text
+    }
+}

@@ -11,7 +11,6 @@ import Foundation
 protocol AlbumSearchData {
     
     var results: Results { get }
-    
 }
 
 protocol AlbumResult {
@@ -20,9 +19,8 @@ protocol AlbumResult {
     var opensearchTotalResults: String { get }
     var opensearchStartIndex: String { get }
     var opensearchItemsPerPage: String { get }
-    var artistMatch:ArtistMatch { get }
+    var albumMatch:AlbumMatch { get }
     var attribute:ForQuery { get }
-    
 }
 
 protocol Query {
@@ -31,7 +29,6 @@ protocol Query {
     var role:String { get }
     var searchTerms:String { get }
     var startPage:String { get }
-    
 }
 
 protocol ForQuery {
@@ -40,26 +37,21 @@ protocol ForQuery {
     
 }
 
-protocol ArtistMatch {
+protocol AlbumMatch {
     
-    var AlbumArtist: [AlbumArtist] { get }
+    var albums: [AlbumPresentable] { get }
     
 }
 
-protocol AlbumArtist {
+protocol AlbumPresentable {
     
     var name:String { get }
-    var listeners:String { get }
-    var mbid:String { get }
-    var url:String { get }
-    var streamable:String { get }
-    var AlbumImage:[AlbumImages] { get }
-    
+    var artist:String { get }
+    var albumImage:String { get }
 }
 
 protocol AlbumImages {
     
     var text:String { get }
     var size:String { get }
-    
 }

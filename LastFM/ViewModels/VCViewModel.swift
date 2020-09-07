@@ -27,29 +27,28 @@ class VCViewModel {
     var albumsSearchResult: AlbumSearchData!
     
     var numberOfAlbums: Int {
-        return albumsSearchResult.results.albummatches.albums.count
+        return albumsSearchResult?.results.albummatches.albums.count ?? 0
     }
     
     // MARK: - Methods
     
-    func viewModel(for index: Int) -> TablecellViewModel {
+    func cellViewModel(for index: Int) -> TablecellViewModel {
         return TablecellViewModel(album: albumsSearchResult.results.albummatches.albums[index])
     }
     // MARK: - Initialization
     
     init() {
         // Fetch  Data
-        fetchAlbumsData()
+        searchAlbums()
     }
     
     // MARK: - Helper Methods
     
     
-    private func fetchAlbumsData() {
-        
+    func searchAlbums(with key: String = "Taylor") {
         
         //Initialize Music search request
-        let musicSearchrequest = AlbumSearchRequest(baseUrl: AlbumSearchService.baseUrlString, album: "Taylor")
+        let musicSearchrequest = AlbumSearchRequest(baseUrl: AlbumSearchService.baseUrlString, album: key)
         
         guard let baseUrl = musicSearchrequest.url else {
             return

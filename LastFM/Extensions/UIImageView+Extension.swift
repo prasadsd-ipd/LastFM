@@ -20,11 +20,13 @@ extension UIImageView {
         guard let url = URL(string: urlSting) else { return }
         image = nil
         
+        // checking image in cache
         if let imageFromCache = imageCache.object(forKey: urlSting as AnyObject) {
             image = imageFromCache as? UIImage
             return
         }
         
+        // Downloading the image
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 guard let imageToCache = UIImage(data: data) else { return }

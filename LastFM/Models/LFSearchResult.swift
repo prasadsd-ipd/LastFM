@@ -33,6 +33,10 @@ struct Results: Codable {
 // MARK: - AlbumMatches
 struct AlbumMatches: Codable {
     let albums: [Album]
+    
+    enum CodingKeys: String, CodingKey {
+        case albums = "album"
+    }
 }
 
 // MARK: - Album

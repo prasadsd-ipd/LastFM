@@ -15,7 +15,7 @@ class LastFMTests: XCTestCase {
     
     override func setUpWithError() throws {
         
-        let data = loadStub(name: "albums.json", extension: "")
+        let data = loadStub(name: "albums", withExten: "json")
         
         let decoder = JSONDecoder()
 
@@ -28,14 +28,15 @@ class LastFMTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testNumberOfMovies() {
-        XCTAssertEqual(viewModel.numberOfAlbums, 30)
-    }
-    
     func testViewModelForIndex() {
-        let cellViewModel = viewModel.viewModel(for: 3)
+        let cellViewModel = viewModel.cellViewModel(for: 3)
         
         XCTAssertEqual(cellViewModel.name, "Believe")
         XCTAssertEqual(cellViewModel.artist, "Justin Bieber")
     }
+    
+    func testNumberOfAlbums() {
+        XCTAssertEqual(viewModel.numberOfAlbums, 50)
+    }
+    
 }

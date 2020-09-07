@@ -127,7 +127,7 @@
 				0982C68F2503275D0066C549 /* ViewControllers */,
 				09D91D5B2505437A006C9413 /* CustomTableCell */,
 				0982C6912503277D0066C549 /* Storyboards */,
-				0982C682250326F40066C549 /* Assets.xcassets */,
+				09899D202505FF80003FD613 /* Resources */,
 				0982C687250326F40066C549 /* Info.plist */,
 			);
 			path = LastFM;
@@ -185,12 +185,44 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		09D91D5025052CC5006C9413 /* LastFMTests */ = {
+		09899D1D2505FF33003FD613 /* Stub */ = {
 			isa = PBXGroup;
 			children = (
 				0982C693250360B80066C549 /* albums.json */,
+			);
+			path = Stub;
+			sourceTree = "<group>";
+		};
+		09899D1E2505FF42003FD613 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
 				09D91D5925052D67006C9413 /* XCTestCase.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		09899D1F2505FF66003FD613 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
 				09D91D5125052CC5006C9413 /* LastFMTests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		09899D202505FF80003FD613 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0982C682250326F40066C549 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		09D91D5025052CC5006C9413 /* LastFMTests */ = {
+			isa = PBXGroup;
+			children = (
+				09899D1D2505FF33003FD613 /* Stub */,
+				09899D1E2505FF42003FD613 /* Extension */,
+				09899D1F2505FF66003FD613 /* TestCases */,
 				09D91D5325052CC5006C9413 /* Info.plist */,
 			);
 			path = LastFMTests;
